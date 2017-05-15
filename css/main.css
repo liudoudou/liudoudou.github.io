@@ -1,0 +1,123 @@
+*{
+	margin:0;
+	padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+.section1 .title{
+	height: 50px;
+	font-size: 50px;
+	line-height: 50px;
+	width: 200px;
+	margin-left: 30px;
+	margin-top:30px;
+}
+.section1 .intro{
+	height: 480px;
+	width: 460px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-left: 200px;
+	margin-top:50px;
+}
+.inhead{
+	height: 100px;
+	float: left;
+}
+.inmain{
+	float: left;
+	height: 400px;
+	width: 300px;
+	margin-left: 40px;
+	margin-top: 50px;
+	font-size: 18px;
+}
+.section1 .intro .headImg{
+	height:80px;
+	width: 70px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-left: 20px;
+	margin-top:20px;
+	background-image: url(../images/headImg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+.introList li{
+	height: 50px;
+	line-height: 50px;
+}
+.section2 .title{
+	float: right;
+	height: 50px;
+	font-size: 50px;
+	line-height: 50px;
+	width: 200px;
+	margin-right: 200px;
+	margin-top:30px;
+}
+.skillShow{
+	width: 500px;
+	height: 500px;
+	float: right;
+	margin-top: 150px;
+	margin-right: -100px;
+	padding-left: 70px;
+	box-sizing:border-box;
+}
+.skillList li{
+	width:120px;
+	height: 120px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.section3 .title{
+	height: 50px;
+	font-size: 50px;
+	line-height: 50px;
+	width: 200px;
+	margin-left: 50px;
+	margin-top:30px;
+}
+.job{
+	padding-top: 30px;
+	width:980px;
+	height: 650px;
+	margin-top: 10px;
+	margin-left: 150px;
+	/*background-color: #fff;*/
+	box-sizing:border-box;
+}
+
+.jobList li{
+	height: 30px;
+	width: 120px;
+	border-radius: 10px;
+	border:1px solid #000;
+	font-size: 18px;
+	margin-left: 20px;
+	margin-top: 20px;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+}
+.jobList li a{
+	color: #000;
+}
+.jobList li a:hover{
+	text-decoration: underline;
+}
+.jobList li:first-child{
+	float: none;
+	font-size: 20px;
+	font-weight: bold;
+}
+.jobList li:nth-child(9){
+	float: none;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 120px;
+}
