@@ -1,0 +1,23 @@
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+html{
+	color: #666;
+    background-color: #fff;
+}
+body{
+	font: normal 12px/1.5 Verdana,simsun,Sans-Serif;
+}
+#doc{
+	width: 100%;
+}
+.clear:after{
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

@@ -1,0 +1,445 @@
+﻿/*大屏*/
+.neikuan{
+	width: 980px;
+	margin: 0 auto;
+}
+header{
+	height: 40px;
+	background-color: #444;
+}
+.guanggao{
+	float: right;
+	line-height: 40px;
+	font-size: 12px;
+	color: #a8a8aa;
+}
+nav{
+	height: 44px;
+	/*background-color: #303030;*/
+    background: rgba(0,0,0,0.8);
+}
+nav>.neikuan>ul{
+	text-align: justify;
+}
+nav>.neikuan>ul:after{
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+
+nav>.neikuan>ul>li{
+	display: inline-block;
+	color: #fff;
+	line-height: 44px;
+	font-size: 12px;
+	vertical-align: center;
+}
+nav>.neikuan>ul>.iconfont{
+	font-size: 18px;
+}
+.col-lg-none{
+	display: none!important;
+}
+.col-lg-inblock{
+	display: inline-block!important;
+}
+.banner{
+	width: 100%;
+	height:624px;
+	background-color: #0a0a0a;
+	/*margin-bottom: 2px;*/
+}
+.bannernav .ban{
+	display: block;
+	width: 100%;
+	height: 580px;
+	background-image: url(../img/iphone_alt_large.jpg);
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size:contain;
+    position: relative;
+}
+.leftctrl,.rightctrl{
+	z-index: 1000;
+    border-radius: 64px;
+    margin-top: -32px;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    background-color: rgba(180,180,180,0.25);
+    color: #848484;
+    font-size: 55px;
+    text-align: center;
+    line-height: 55px;
+    opacity: 0;
+    top:0;
+    bottom: 0;
+    margin: auto 0;
+}
+.leftctrl:hover{
+	opacity:1;
+}
+.rightctrl:hover{
+	opacity:1;
+}
+.leftctrl{
+	left: 18px;
+}
+.rightctrl{
+	right: 18px;
+}
+.tablist{
+	width: 180px;
+	height: 22px;
+	position: absolute;
+	/*background-color: red;*/
+	left: 0;
+	right: 0;
+	margin:0 auto;
+	top: 610px;
+}
+.tablist li{
+    margin: 0 5px;
+    width: 50px;
+    height: 22px;
+    float: left;
+}
+
+.tab{
+    z-index: 1;
+    height: 2px;
+    width: 50px;
+    background-color: rgba(128,128,128,0.2);
+}
+.tab:hover{
+	background-color: #dbdbdb;
+}
+
+
+
+
+
+
+.row{
+	height: 204px;
+}
+.row ul li{
+	float: left;
+	width: 25%;
+    box-sizing: border-box;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.peijian{
+	width: 25%;
+	height: 204px;
+	background-image: url(../img/accessories_large.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:cover;
+}
+.ipadpro{
+	width: 25%;
+	height: 204px;
+	background-image: url(../img/ipad_pro_large.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:cover;
+}
+.airpods{
+	width: 25%;
+	height: 204px;
+	background-image: url(../img/airpods_large.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:cover;
+}
+.care{
+	width: 25%;
+	height: 204px;
+	background-image: url(../img/iphone_upgrade_large.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:cover;
+}
+footer{
+	width: 100%;
+    background-color: #f2f2f2;
+    color: #333;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+.ac-gf-sosumi{
+    border-bottom: 1px solid #d6d6d6;
+    color: #888;
+    padding: 17px 0 11px;
+    font-size: 12px;
+}
+.linkbar{
+	height: 245px;
+	padding-top: 20px;
+}
+.footbox .linkbar{
+    font-size: 11px;
+}
+.footbox .linkbar dl{
+	display: block;
+	width: 20%;
+	float: left;
+}
+.footbox .linkbar dl dd{
+	cursor: pointer;
+	margin-top: 5px;
+}
+.footbox .linkbar dl dd a{
+    color: #555;
+}
+.footer{
+    color: #888;
+    padding: 34px 0 21px;
+}
+.shop {
+    border-bottom: 1px solid #d6d6d6;
+    max-height: 9999px;
+    margin-bottom: 7px;
+    padding-bottom: 6px;
+}
+.locale {
+    float: right;
+    margin-top: 3px;
+
+}
+.legal {
+    position: relative;
+    top: -3px;
+    z-index: 1;
+}
+.copyright {
+    max-height: 9999px;
+}
+.copyright,.links {
+    margin-right: 30px;
+    float: left;
+    margin-top: 3px;
+}
+.link{
+    border-right: 1px solid #d6d6d6;
+    margin-right: 10px;
+    padding-right: 12px;
+    display: inline-block;
+    margin-top: 3px;
+    white-space: nowrap;
+}
+.footer{
+	height: 21px;
+    color: #888;
+    padding: 17px 0 11px;
+    font-size: 12px;
+}
+.shop a,.locale a{
+    color: #0070c9;
+}
+.legal a,.locale a{
+	color: #555;
+}
+.link:last-child{
+	border-right:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/iconfont.woff') format('woff'),
+  url('../font/iconfont.ttf') format('truetype'),
+  url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*中屏*/
+@media screen and (max-width: 1068px){
+	.col-md-none{
+		display: none!important;
+	}
+	.neikuan{
+		width: 100%;
+		
+		/*margin: 0 auto;*/
+	}
+	.guanggao{
+		margin-right: 25px;
+	}
+	nav>.neikuan>ul>li:nth-child(2){
+		margin-left: 25px;
+	}
+	nav>.neikuan>ul>li:last-child{
+		margin-right: 25px;
+	}
+	.bannernav .ban{
+		display: block;
+		width: 100%;
+		height: 550px;
+		background-image: url(../img/iphone_alt_medium.jpg);
+	}
+	.row{
+		height: 406px;
+	}
+	.row ul li{
+		float: left;
+		width: 50%;
+	    box-sizing: border-box;
+	    border-top: 2px solid #fff;
+	    border-right: 2px solid #fff;
+	}
+	.peijian{
+		width: 50%;
+		background-image: url(../img/accessories_medium.jpg);
+	}
+	.ipadpro{
+		width: 50%;
+		background-image: url(../img/ipad_pro_medium.jpg);
+		border-right:none;
+	}
+	.airpods{
+		width: 50%;
+		background-image: url(../img/airpods_medium.jpg);
+	}
+	.care{
+		width: 50%;
+		background-image: url(../img/iphone_upgrade_medium.jpg);
+		border-right:none;
+	}
+	/*.neikuan{
+		padding-left: 22px;
+	}*/
+	footer{
+		box-sizing:border-box;
+		padding: 34px 30px 21px;
+	}
+
+
+
+
+
+
+
+
+
+
+}
+/*小屏*/
+@media screen and (max-width: 735px){
+	.col-sm-inblock{
+		display: inline-block!important;
+	}
+	.col-sm-none{
+		display: none!important;
+	}
+	.neikuan{
+		width: 100%;
+		/*margin: 0 auto;*/
+	}
+	nav>.neikuan>ul>li:first-child{
+		margin-left: 25px;
+	}
+	nav>.neikuan>ul>li:nth-child(9){
+		margin-right: 25px;
+	}
+	/*nav>.neikuan>ul>li.main-nav{
+		display: none;
+	}*/
+	.bannernav .ban{
+		display: block;
+		width: 100%;
+		height: 420px;
+		background-image: url(../img/iphone_alt_small.jpg);
+		background-repeat: no-repeat;
+	    background-position: center center;
+	    background-size:contain;
+	    position: relative;
+	}
+	.row{
+		height: 810px;
+	}
+	.row ul li{
+		float: left;
+		width: 100%;
+	    box-sizing: border-box;
+	    border-top: 2px solid #fff;
+	    /*border-right: 2px solid #fff;*/
+	}
+	.peijian{
+		width: 100%;
+		background-image: url(../img/accessories_small.jpg);
+		background-repeat: no-repeat;
+	}
+	.ipadpro{
+		width: 100%;
+		background-image: url(../img/ipad_pro_small.jpg);
+		background-repeat: no-repeat;
+		border-right:none;
+	}
+	.airpods{
+		width: 100%;
+		background-image: url(../img/airpods_small.jpg);
+		background-repeat: no-repeat;
+	}
+	.care{
+		width: 100%;
+		background-image: url(../img/iphone_upgrade_small.jpg);
+		background-repeat: no-repeat;
+		border-right:none;
+
+	}
+	.footbox .linkbar dl{
+		width: 100%;
+		padding: 10px 0;
+		border-bottom: 1px solid #d6d6d6; 
+	}
+	.footbox .linkbar dl .zuo{
+		float: left;
+	}
+	.footbox .linkbar dl .you{
+		float: right;
+	}
+	.shop{
+		margin-top: 30px;
+		border-bottom:none;
+		margin-bottom: 20px;
+	}
+	.locale{
+		float: none;
+	}
+	.footer .legal .copyright{
+		margin-top: 60px;
+		float: none;
+	}
+	footer{
+		box-sizing:border-box;
+		padding: 34px 30px 21px;
+	}
+}
+.clear:after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear:both;
+}
