@@ -1,0 +1,67 @@
+/*学员*/
+.students ul {
+    margin-bottom: 0.1rem;
+}
+.students ul.student li {
+    width: 100%;
+    height: 1.86rem;
+    background-color: #fff;
+    margin-bottom: 0.1rem;
+    padding: 0.2rem 0;
+    padding-bottom: 0.35rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #b8b8b8;
+}
+.students ul.student li div.img {
+    width: 1.93rem;
+    height: 100%;
+    background-color: #c8c8c8;
+    float: left;
+}
+.students ul.student li div.img img {
+    width: 100%;
+    height: 100%;
+}
+.students ul.student li div.right {
+    padding-left: 0.29rem;
+    padding-bottom: 0.18rem;
+    float: left;
+    width: 4.3rem;
+}
+.students ul.student li div.right .title {
+    overflow: hidden;
+}
+.students ul.student li div.right .title h2 {
+    float: left;
+    font-size: 0.26rem;
+    font-weight: normal;
+    color: #000;
+}
+.students ul.student li div.right .title span {
+    float: left;
+    font-size: 0.18rem;
+    color: #444;
+    margin-top: 0.06rem;
+    margin-left: 0.1rem;
+}
+.students ul.student li div.right .xian {
+    width: 4.25rem;
+    height: 0;
+    border-bottom: 1px dashed #b8b8b8;
+    margin-top: 0.08rem;
+    margin-bottom: 0.08rem;
+}
+.students ul.student li div.right .sales {
+    width: 100%;
+    font-size: 0.24rem;
+    color: #94d43b;
+}
+.students ul.student li div.right .sales span {
+    font-size: 0.26rem;
+    font-weight: bold;
+}
+.students ul.student li div.right h3 {
+    margin-top: 0.08rem;
+    font-size: 0.24rem;
+    color: #444;
+}

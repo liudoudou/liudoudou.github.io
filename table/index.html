@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可编辑表格</title>
+    <style>
+        table{
+            width: 500px;
+            margin:0 auto;
+            border:1px solid #ccc;
+            text-align: center;
+            border-collapse: collapse;
+            table-layout:fixed;
+
+        }
+        td,th{
+            border-bottom:1px solid #ccc;
+            height:30px;
+            text-align: center;
+            border-collapse: collapse;
+            table-layout:fixed;
+        }
+        tfoot{
+            text-align: center;
+        }
+        .del{
+            color:blue;
+            cursor: pointer;
+        }
+        .jia{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<table border="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td contenteditable="true">张三</td>
+            <td contenteditable="true">01</td>
+            <td contenteditable="true">90</td>
+            <td class="del">删除</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" class="jia">+</td>
+        </tr>
+    </tfoot>
+</table>
+    <script src="function.js"></script>
+    <script>
+//        $(function(){
+            var add = $(".jia")[0];
+            var tbody = $("tbody")[0];
+//            [{name:"",number:"",grade:""}]
+            function getData() {
+                var data = localStorage.table?JSON.parse(localStorage.table):[];
+                return data;
+            }
+            function saveData(data) {
+                if(data == undefined){
+                    return;
+                }
+                localStorage.table = JSON.stringify(data);//保存到localStorage
+            }
+            add.onclick = function () {
+                var data = getData();
+                data.push({name:"",number:"",grade:""});
+                saveData(data);
+                reWrite();
+//                console.log(getData());
+            }
+            function reWrite() {
+                tbody.innerHTML = "";
+                var data = getData();
+                var str = "";
+                data.forEach(function (v,i) {
+                    str += `<tr id="${i}"><td contenteditable='true' onblur='change(this)' class='name'>${v.name}</td><td contenteditable='true'onblur='change(this)' class='number'>${v.number}</td><td contenteditable='true' class='grade' onblur='change(this)'>${v.grade}</td><td class='del'>删除</td></tr>`;
+                });
+                tbody.innerHTML = str;
+            }
+            reWrite();
+            tbody.onclick = function (e) {
+                var target = e.target;
+                if(target.className == "del"){
+                    var data = getData();
+                    var id = target.parentNode.id;
+                    data.splice(id,1);
+                    saveData(data);
+                    reWrite();
+                }
+            }
+            function change(ele) {
+                console.log(ele);
+                var data = getData();
+                var index = ele.parentNode.id;
+                var key = ele.className;
+                var val = ele.innerHTML;
+                data[index][key] = val;
+                saveData(data);
+                reWrite();
+            }
+//            jia.onclick = function(){
+//                var tr = $("<tr>");
+//                tr.innerHTML = "<td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td class='del'>删除</td>";
+//                tbody.appendChild(tr);
+//            }
+//            tbody.onclick=function (e) {
+//                var target = e.target;
+//                if(target.className == "del"){
+//                    tbody.removeChild(target.parentNode);
+//                }
+//            }
+//        });
+    </script>
+</body>
+</html>

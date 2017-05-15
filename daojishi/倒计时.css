@@ -1,0 +1,93 @@
+*{
+	margin:0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Work Sans", Arial, sans-serif;
+    font-size: 16px;
+}
+.page{
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    background-image: url(img_bg_1.jpg);
+    background-position: 0% 5px;
+    height: 900px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+}
+.fh5co-nav {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    padding: 40px 0;
+    z-index: 1001;
+}
+.fh5co-cover .overlay {
+	height: 900px;
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.container{
+	width: 1170px;
+	margin:0 auto;
+}
+.title{
+	margin-top: 20px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	color: #fff;
+}
+.jieri{
+	margin-bottom: 20px;
+    font-size: 50px;
+    line-height: 1.5;
+	margin-top: 50px;
+	height: 90px;
+	text-align: center;
+	font-weight: 100;
+	color: #fff;
+}
+.timeBox{
+	width: 510px;
+	margin:100px auto;
+}
+.simply-section {
+	text-align: center;
+	font-size: 70px;
+	color: #fff;
+	font-weight: 100;
+    display: inline-block;
+    width: 110px;
+    height: 120px;
+    line-height: 120px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid rgba(250, 70, 89, 0.5);
+    margin: 0 7px;
+    position: relative;
+    animation: pulse 1.01s ease infinite;
+}
+.timeBox.now{
+	width: 390px;
+}
+p{
+	color: #fff;
+	line-height: 20px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,110 @@
+/*资讯*/
+.media {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 3px solid #f5f6fa;
+}
+.media a {
+    display: block;
+    margin-top: 0.34rem;
+}
+.media a h2 {
+    font-size: 0.28rem;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 0.22rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.media a .media_con {
+    height: 1.79rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.media a .media_con .img {
+    width: 2.06rem;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.media a .media_con p {
+    float: right;
+    width: 4.2rem;
+    height: 1.4rem;
+    font-size: 0.24rem;
+    color: #494747;
+    line-height: 0.36rem;
+    overflow: hidden;
+}
+.media a .media_con .img .floor {
+    width: 1.93rem;
+    height: 1.45rem;
+    background: url(../images/media_line.png) 0 0 no-repeat;
+    background-size: cover;
+    float: right;
+}
+.media a .media_con .img .ceil {
+    width: 1.93rem;
+    height: 1.45rem;
+    position: absolute;
+    background-color: #c8c8c8;
+    top: 0.15rem;
+    left: 0;
+}
+.media a .media_con .img .ceil img {
+    width: 100%;
+    height: 100%;
+}
+.media a .media_rem {
+    height: 0.6rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.media a .media_rem .time {
+    width: 2.1rem;
+    float: left;
+}
+.media a .media_rem div {
+    height: 100%;
+    line-height: 0.6rem;
+}
+.media a .media_rem .time i {
+    background: url(../img/media_icon.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;   
+    background-size: cover;
+}
+.media a .media_rem div i {
+    display: inline-block;
+    width: 0.31rem;
+    height: 0.31rem;
+    margin-top: 0.15rem;
+    float: left;
+    margin-right: 0.05rem;
+}
+.media a .media_rem div span {
+    font-size: 0.2rem;
+    float: left;
+    margin-top: -0.01rem;
+    color: #666;
+}
+.media a .media_rem .click {
+    width: 2.4rem;
+    float: left;
+}
+.media a .media_rem .time i {
+    background: url(../img/media_icon.png);
+    background-repeat: no-repeat;
+    background-position: -0.32rem 0;
+    background-size: cover;
+}
+.media a .media_rem .share {
+    width: 2rem;
+    float: right;
+    overflow: hidden;
+}
+.media a .media_rem .share i {
+    background: url(../img/media_icon.png);
+    background-repeat: no-repeat;
+    background-position: -0.7rem 0;
+    background-size: cover;
+}

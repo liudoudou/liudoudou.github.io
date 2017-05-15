@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            position: relative;
+            width:260px;
+            height:260px;
+            /*overflow: hidden;*/
+        }
+        .item{
+            width:260px;
+            height:260px;
+            border:1px solid red;
+        }
+        .item img{
+            width:260px;
+            height: 260px;
+        }
+        .show{
+            border:1px solid #ccc;
+            position: absolute;
+            width:260px;
+            height:260px;
+            left:270px;
+            top:0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .show img{
+            width:780px;
+            height: 780px;
+        }
+        .mask{
+            width:87px;
+            height:87px;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            left:0;
+            right:0;
+            opacity: 0;
+        }
+        .copy{
+            width:260px;
+            height: 260px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item">
+            <div class="mask"></div>
+            <img src="img/c4.jpg" alt="">
+        </div>
+        <div class="copy"></div>
+        <div class="show">
+            <img src="img/c4.jpg" alt="">
+        </div>
+    </div>
+    <script src="function.js"></script>
+    <script>
+        $(function () {
+            var box = $(".box")[0];
+            var mask = $(".mask")[0];
+            var show = $(".show")[0];
+            var copy = $(".copy")[0];
+            var showimg = $(".show img")[0];
+            const bili = box.offsetWidth/mask.offsetWidth;
+            box.onmouseover = function () {
+                mask.style.opacity = 1;
+                show.style.opacity = 1;
+            }
+            box.onmouseout = function () {
+                mask.style.opacity = 0;
+                show.style.opacity = 0;
+            }
+            copy.onmousemove = function (e) {
+                var [ox,oy] = [e.offsetX,e.offsetY];
+                var [mx,my] = [ox - mask.offsetWidth/2,oy - mask.offsetHeight/2];
+                if(mx<0){
+                    mx = 0;
+                }
+                if(my<0){
+                    my = 0;
+                }
+                if(mx>box.offsetWidth-mask.offsetWidth){
+                    mx = box.offsetWidth-mask.offsetWidth;
+                }
+                if(my>box.offsetHeight-mask.offsetHeight){
+                    my = box.offsetHeight-mask.offsetHeight;
+                }
+                mask.style.left = mx + "px";
+                mask.style.top = my + "px";
+                showimg.style.marginLeft = -bili*mx + "px";
+                showimg.style.marginTop = -bili*my + "px";
+
+            }
+        })
+    </script>
+</body>
+</html>

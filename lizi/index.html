@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+        window.onload = function () {
+            let canvas = document.querySelector("canvas");
+            let cobj = canvas.getContext("2d");
+            let x = 200;
+            let y = 200;
+            canvas.onmousemove = function (e) {
+                x = e.offsetX;
+                y = e.offsetY;
+            }
+
+            class lizi{
+                constructor(canvas,cobj){
+//                    画布
+                    this.canvas = canvas;
+//                    画笔
+                    this.cobj = cobj;
+//                    初始位置
+                    this.x = x;
+                    this.y = y;
+//                    半径
+                    this.r = 20*Math.random()+3;
+//                    水平速度
+                    this.speedX = 6*Math.random()-2;
+                    this.speedY = -5;
+                    this.g = 0.3;
+                    this.color = `rgba(${parseInt(255*Math.random())},${parseInt(255*Math.random())},${parseInt(255*Math.random())},${Math.random()})`;
+                }
+                draw(){
+//                    1.保存画布环境
+                    this.cobj.save();
+//                    2.移动到坐标点
+                    this.cobj.translate(this.x,this.y);
+//                    3.落笔
+                    this.cobj.beginPath();
+//                    4.画圆
+                    this.cobj.arc(0,0,this.r,0,Math.PI*2);
+//                    5.填充
+                    this.cobj.fillStyle=this.color;
+                    this.cobj.fill();
+//                    6.恢复
+                    this.cobj.restore();
+                }
+                update(){
+                    this.x += this.speedX;
+                    this.speedY += this.g;
+                    this.y += this.speedY;
+                }
+            }
+            let liziobj = new lizi(canvas,cobj);
+            liziobj.draw();
+
+            let arr = [];
+            let t = setInterval(function () {
+//                清空画布
+                cobj.clearRect(0,0,500,500);
+                let liziobj = new lizi(canvas,cobj);
+                arr.push(liziobj);
+                for(let i = 0; i < arr.length; i++){
+                    arr[i].draw();
+                    arr[i].update();
+                }
+                if(arr.length>200){
+                    arr.shift();
+                }
+//                liziobj.draw();
+//                liziobj.update();
+            },50);
+        }
+
+
+    </script>
+</body>
+</html>

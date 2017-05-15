@@ -1,0 +1,288 @@
+/*web页*/
+.box2 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box2 li {
+    font-size: 0.32rem;
+    border-bottom: 0.04rem;
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.box2 li a {
+    font-size: 0.32rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    line-height: 1rem;
+    border: none;
+    text-align: center;
+}
+.web-content{
+    width: 100%;
+    padding: 0.1rem 0.24rem 0;
+    box-sizing:border-box;
+}
+.web-content .mulu{
+    height: 0.62rem;
+    line-height: 0.62rem;
+    width: 100%;
+}
+.web-content .mulu span {
+    float: left;
+    width: 0.16rem;
+    height: 0.2rem;
+    margin-top: 0.26rem;
+    font-size: 0.22rem;
+    text-align: center;
+    color: #494747;
+    background-size: 100%;
+    background: url(../img/jiantou.png) center center no-repeat;
+    overflow: hidden;
+}
+.web-content .mulu a:nth-child(1) {
+    margin-left: 0;
+}
+.web-content .mulu a{
+    color: #494747;
+    font-size: 0.22rem;
+    line-height: 0.7rem;
+    float: left;
+    margin: 0 0.14rem;
+    font-weight: bold;
+}
+.web .column1 {
+    width: 100%;
+    height: 2.26rem;
+    background-color: #ffffff;
+    margin-bottom: 0.1rem;
+    padding: 0.28rem;
+    box-sizing: border-box;
+}
+.web .column1 .img {
+    width: 25%;
+    height: 1.7rem;
+    padding: 0 0.2rem;
+    float: left;
+    box-sizing: border-box;
+}
+.web .column1 .img img {
+    width: 100%;
+}
+.web .column1 .img div {
+    font-size: 0.24rem;
+    color: #000000;
+    text-align: center;
+}
+.web .column {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 0.1rem;
+    padding-left: 0.43rem;
+    padding-top: 0.3rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0.3rem;
+    box-sizing: border-box;
+    position: relative;
+}
+.web .shu{
+    width: 0.08rem;
+    height: 0.24rem;
+    background-color: #01b5ff;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.32rem;
+}
+.shu {
+/*    width: 0.04rem;
+    height: 0.2rem;*/
+    background: #01b5ff;
+    display: inline-block;
+    float: left;
+    margin-left: -0.2rem;
+    margin-top: 0.07rem;
+    overflow: hidden;
+}
+.web .column h2 {
+    font-size: 0.28rem;
+    color: #333;
+    margin-bottom: 0.13rem;
+}
+.web .column .line {
+    width: 100%;
+    height: 0;
+    border-bottom: 1px dashed #666666;
+}
+.web .column p {
+    color: #333;
+    font-size: 0.24rem;
+    line-height: 0.38rem;
+    margin-top: 0.15rem;
+}
+.web .column p .qianduan{
+    color: #01b5ff;
+    font-size: 0.26rem;
+}
+.web .column .static {
+    width: 100%;
+}
+.web .column .static h3{
+    color: #0e86ff;
+    width: 100%;
+    text-align: center;
+    font-size: 0.26rem;
+    margin-top: 0.22rem;
+}
+.web .column .static .img {
+    margin-top: 0.36rem;
+    height: 4rem;
+    background-size: cover;
+    width: 7rem;
+    margin-left: -0.4rem;
+    box-sizing:border-box;
+}
+.web .column .static .img img{
+    width: 100%;
+    height:100%;
+}
+.money{
+    font-size: 0.24rem;
+}
+.ydkfgcs{
+    background-image: url(../img/q_18_18.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 2.87rem;
+    height: 1.06rem;
+    float: left;
+    line-height: 1.2rem;
+    color: #333;
+    text-align: center;
+    text-indent: 2em;
+    margin-left: 0.5rem;
+}
+.qdgcs{
+    background: url(../img/q_18_20.png);
+    background-size: 100%;
+    width: 2.47rem;
+    height: 1.06rem;
+    float: left;
+    overflow: hidden;
+    line-height: 1.2rem;
+    color: #333;
+    text-align: center;
+    text-indent: 1.5em;
+}
+.pmsjs{
+    background: url(../img/q_18_25.png) no-repeat;
+    background-size: 100%;
+    width: 3.05rem;
+    height: 0.97rem;
+    overflow: hidden;
+    line-height: 1.1rem;
+    color: #333;
+    margin-left: 20%;
+    text-align: center;
+    text-indent: 2.5em;
+}
+.wxeckf{
+    background: url(../img/q28.png) no-repeat;
+    background-size: 100%;
+    width: 3.37rem;
+    height: 1.01rem;
+    margin-left: 0.22rem;
+    line-height: 1.1rem;
+    float: left;
+    color: #333;
+    text-align: center;
+    text-indent: 2em;
+}
+.uisjs{
+    background: url(../img/q_30.png) no-repeat;
+    background-size: 100%;
+    width: 2.7rem;
+    height: 1.01rem;
+    margin-left: 0.1rem;
+    line-height: 1.1rem;
+    float: left;
+    overflow: hidden;
+    color: #333;
+    text-align: center;
+    text-indent: 1.5em;
+}
+.h5kfgcs{
+    background: url(../img/q_18_34.png) no-repeat;
+    background-size: 100%;
+    width: 3.12rem;
+    height: 0.95rem;
+    overflow: hidden;
+    line-height: 1.1rem;
+    color: #333;
+    margin-left: 20%;
+    text-align: center;
+    text-indent: 2.5em;
+}
+.xinzi{
+    width: 100%;
+    height: 3.6rem;
+    position: relative;
+}
+.title_name{
+    height: 0.65rem;
+    text-transform: uppercase;
+}
+.title_name p{
+    font-size: 0.3rem;
+    float: left;
+    height: 100%;
+    line-height: 0.6rem;
+    padding: 0 0.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0.15rem;
+}
+.xinzi ul li {
+    width: 100%;
+    height: 0.65rem;
+    overflow: hidden;
+}
+.xinzi ul .stu_name {
+    width: 1.6rem;
+}
+.xinzi ul p {
+    float: left;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.xinzi ul .moneycolor {
+    width: 1.8rem;
+    font-size: 0.26rem;
+    color: #ffa201;
+    font-weight: 600;
+}
+.xinzi ul .stu_daiyu {
+    width: 2.3rem;
+    margin-left: 0.3rem;
+}
+.yuandian{
+   position: absolute;
+    left: -0.15rem;
+    right: 0;
+    width: 0.4rem; 
+}
+.yuandian div{
+    float: left;
+    width: 0.15rem;
+    height: 0.15rem;
+    border-radius: 50%;
+    background: #01b5ff;
+    border: 0.08rem solid #98e1ff;
+    margin-top: 0.34rem;
+}

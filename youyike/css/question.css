@@ -1,0 +1,71 @@
+/*热门问题*/
+.hot {
+    background: #ffffff;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-left: 0.2rem;
+    padding-top: 0.3rem;
+    box-sizing: border-box;
+    font-size: 0.24rem;
+}
+.hot .shu {
+    width: 0.04rem;
+    height: 0.2rem;
+    background: #01b5ff;
+    display: inline-block;
+    float: left;
+    margin-left: -0.15rem;
+    margin-top: 0.07rem;
+    overflow: hidden;
+}
+.hot h2 {
+    font-size: 0.26rem;
+    color: #333;
+    margin-bottom: 0.14rem;
+    font-weight: normal;
+}
+.hot .yuan {
+    width: 0.25rem;
+    height: 0.25rem;
+    background: url(../img/hot_01.png) no-repeat;
+    float: left;
+    margin-left: -0.25rem;
+    margin-top: 0.06rem;
+    overflow: hidden;
+}
+.hot p {
+    color: #666;
+    width: 100%;
+    background: transparent;
+    margin-top: -0.02rem;
+    line-height: 0.36rem;
+    margin-left: 0;
+    text-align: left;
+    border-radius: 0.07rem;
+    height: 65%;
+    float: left;
+    font-size: 0.2rem;   
+}
+.hot .zk {
+    color: #ff9300;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.2rem;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    background: #fff;
+    /* float: left; */
+    line-height: 0;
+    font-size: 0.27rem;
+    margin: 0.3rem auto;
+    margin-left: 0;
+}
+.hot .line {
+    width: 100%;
+    height: 0;
+    float: left;
+    border-bottom: 1px solid #b8b8b8;
+    /* margin: 0.2rem 0; */
+}

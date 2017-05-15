@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        canvas{
+            display: block;
+            margin:0 auto;
+            /*background-color: #eee;*/
+            float: left;
+            border:1px solid #000;
+            /*margin-left: 30px;*/
+            cursor: crosshair;
+        }
+        .menu{
+            width: 250px;
+            height: 600px;
+            float: left;
+            background-color: #c2ffe3;
+            padding: 10px;
+
+        }
+        .menu section{
+            height: 30px;
+            margin-bottom: 15px;
+        }
+        input[type=button]{
+            width:150px;
+            height:30px;
+            background-color: #00ff00;
+            color: #fff;
+            border:none;
+            border-radius: 5px;
+            margin:15px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <section>
+            <label for="shape">选择形状</label>
+            <select name="" id="shape">
+                <option value="rect">矩形</option>
+                <option value="circlein">内切圆</option>
+                <option value="circleout">外接圆</option>
+                <option value="circlecenter">中心圆</option>
+                <option value="poly">多边形</option>
+                <option value="line">直线</option>
+                <option value="pen">铅笔</option>
+                <option value="eraser">橡皮</option>
+            </select>
+        </section>
+        <section>
+            <label for="color">选择颜色</label>
+            <input type="color" id="color">
+        </section>
+        <section>
+            <label for="width">选择线宽</label>
+            <input type="number" id="width" value="2" step="2" min="2" max="20">
+        </section>
+
+        <section>
+            <label for="style">选择线宽</label>
+            <select name="" id="style">
+                <option value="stroke">描边</option>
+                <option value="fill">填充</option>
+            </select>
+        </section>
+        <section>
+            <label for="side">边数</label>
+            <input type="number" id="side" value="3" min="3" max="12">
+        </section>
+        <input type="button" value="撤销" id="redo">
+        <input type="button" value="保存" id="save">
+        <input type="button" value="清空" id="clear">
+    </div>
+    <canvas width="1000" height="600"></canvas>
+
+</body>
+<script src="draw.js"></script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var cobj = canvas.getContext("2d");
+    var shape = document.querySelector("#shape");
+    var color = document.querySelector("#color");
+    var width = document.querySelector("#width");
+    var style = document.querySelector("#style");
+    var side = document.querySelector("#side");
+    var redo = document.querySelector("#redo");
+    var save = document.querySelector("#save");
+    var clear = document.querySelector("#clear");
+    var data = [];
+    var s = "rect";
+    var c = "#000";
+    var w = "2";
+    var st = "stroke";
+    var si = "3";
+
+    shape.onchange = function(){
+        s = this.value;
+    }
+    color.onchange = function(){
+        c = this.value;
+    }
+    width.onchange = function(){
+        w = this.value;
+    }
+    style.onchange = function(){
+        st = this.value;
+    }
+    side.onchange = function(){
+        si = this.value;
+    }
+    redo.onclick = function(){
+//        if(data.length == 0){
+//            alert("已经没有了")
+//            return;
+//        }
+        cobj.clearRect(0,0,canvas.width,canvas.height);
+        data.pop(); //删除最后一个历史记录
+        if(data.length == 0){   //data长度为0 时 可以撤销 但是不可以putImageData
+            return;
+        }
+        cobj.putImageData(data[data.length-1],0,0)
+
+    }
+
+    canvas.onmousedown = function(e){
+        let ox = e.offsetX;
+        let oy = e.offsetY;
+        var draw = new Draw(cobj,{color:c,width:w,style:st});
+        if(s == "pen"){
+            cobj.beginPath();
+            cobj.moveTo(ox,oy);
+        }
+        document.onmousemove=function (e) {
+            let mx = e.offsetX;
+            let my = e.offsetY;
+            if(s != "eraser"){
+                cobj.clearRect(0,0,canvas.width,canvas.height);
+                if(data.length != 0){
+                    cobj.putImageData(data[data.length-1],0,0);
+                }
+            }
+            draw[s](ox,oy,mx,my,si);
+        }
+        document.onmouseup = function(){
+            data.push(cobj.getImageData(0,0,canvas.width,canvas.height));
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+    }
+    save.onclick = function(){
+//        var r = canvas.toDataURL;
+//        location.assign=r;
+        location.href = canvas.toDataURL().replace("data:image/png","data:stream/octet");
+    }
+    clear.onclick = function(){
+        cobj.clearRect(0,0,canvas.width,canvas.height);
+        data = [];
+    }
+</script>
+</html>

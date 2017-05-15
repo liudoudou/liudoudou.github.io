@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>五一</title>
+	<link rel="stylesheet" href="倒计时.css">
+	<style>
+		/*h3{
+			text-align: center;
+			font-size: 40px;
+		}
+		.now,.djs{
+			width: 200px;
+			height: 50px;
+			background-color: #000;
+			text-align: center;
+			line-height: 50px;
+			font-size: 14px;
+			color: #fff;
+			margin: 50px auto;
+		}
+		.num{
+			font-size: 30px;
+			color: red;
+		}*/
+	</style>
+</head>
+<body>
+	<!-- <h3>五一倒计时</h3>
+	<div class="now">
+		<span class="num">0</span><span>时</span>
+		<span class="num">0</span><span>分</span>
+		<span class="num">0</span><span>秒</span>
+	</div>
+	<div class="djs">
+		
+		<span class="num">0</span><span>时</span>
+		<span class="num">0</span><span>分</span>
+		<span class="num">0</span><span>秒</span>
+	</div> -->
+	<div class="page">
+		<div class="fh5co-nav fh5co-cover">
+			<div class="overlay">
+				<div class="container">
+					<div class="title">LAUNCH.</div>
+					<div class="jieri">
+						National Day is Coming Very Soon!
+					</div>
+					<div class="timeBox djs">
+						<p>Count down:</p>
+						<div class="simply-section simply-days-section">
+							<span class="num1">00</span><span></span>
+						</div>
+						<div class="simply-section simply-days-section">
+							<span class="num2">00</span><span></span>
+						</div>
+						<div class="simply-section simply-days-section">
+							<span class="num3">00</span><span></span>
+						</div>
+						<div class="simply-section simply-days-section">
+							<span class="num4">00</span><span></span>
+						</div>
+					</div>
+					<div class="timeBox now">
+						<p>Now time:</p>
+						<div class="simply-section simply-days-section">
+							<span class="num1">00</span><span></span>
+						</div>
+						<div class="simply-section simply-days-section">
+							<span class="num2">00</span><span></span>
+						</div>
+						<div class="simply-section simply-days-section">
+							<span class="num3">00</span><span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="function.js"></script>
+	<script>
+		$(function(){
+			const nowh = $(".now .num1")[0];
+			const nowm = $(".now .num2")[0];
+			const nows = $(".now .num3")[0];
+
+			const dd = $(".djs .num1")[0];
+			const dh = $(".djs .num2")[0];
+			const dm = $(".djs .num3")[0];
+			const ds = $(".djs .num4")[0];
+
+			class time{
+				constructor(h,m,s){
+					this.h = h;
+					this.m = m;
+					this.s = s;
+				}
+				play(){
+					this.getTime();
+					this.writes(this.getTime());
+					this.update();
+					// console.log(this.getTime());
+					// nowh.innerHTML=this.getTime().get("h");
+					// nowm.innerHTML=this.getTime().get("m");
+					// nows.innerHTML=this.getTime().get("s");
+				}
+				getTime(){
+					let date = new Date();
+					let h = date.getHours();
+					let m = date.getMinutes();
+					let s = date.getSeconds();
+					let map = new Map();
+					map.set("h",h);
+					map.set("m",m);
+					map.set("s",s);
+
+					return map;
+				}
+				writes(map){
+					// this.d.innerHTML=map.get("d");
+					this.h.innerHTML=map.get("h");
+					this.m.innerHTML=map.get("m");
+					this.s.innerHTML=map.get("s");
+				}
+				update(){
+					let that = this;
+					setInterval(function(){
+						that.writes(that.getTime());
+					},1000)
+				}
+			}
+
+			let nowtime = new time(nowh,nowm,nows);
+			nowtime.play();
+			class djs extends time{
+				constructor(h,m,s,d,date){
+					super(h,m,s);
+					this.d = d;
+					this.date = date;
+				}
+				play(){
+					let map = this.getChaTime();
+					this.writes(map);
+					this.update();
+					
+				}
+				getChaTime(){
+					let now = new Date();
+					let chatime = this.date.getTime()-now.getTime();
+					chatime/=1000;
+					let d = parseInt(chatime/60/60/24);
+					let h = parseInt(chatime/60/60%24);
+					let m = parseInt(chatime/60%60);
+					let s = parseInt(chatime%60);
+
+					let map = new Map();
+					map.set("d",d);
+					map.set("h",h);
+					map.set("m",m);
+					map.set("s",s);
+
+					return map;
+				}
+				writes(map){
+					this.d.innerHTML = map.get("d");
+					super.writes(map);
+				}
+				update(){
+					let that = this;
+					setInterval(function(){
+						let map = that.getChaTime();
+						that.writes(map);
+					},1000)
+				}
+				
+			} 
+			let date = new Date(2017,9,1,0,0,0);
+			let wydjs = new djs(dh,dm,ds,dd,date);
+			wydjs.play();
+			// console.log(wydjs.h);
+			// console.log(wydjs.m);
+			// console.log(wydjs.s);
+			// console.log(wydjs.d);
+			// console.log(wydjs.date);
+		})
+	</script>
+</body>
+</html>

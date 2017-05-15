@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            user-select: none;
+        }
+        html{
+            width: 100%;
+            height:100%;
+        }
+        body{
+            width: 100%;
+            height:100%;
+            overflow: hidden;
+            background: url(img/bg4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-color: #c09730;*/
+            /*background-position: center center;*/
+        }
+        .sence{
+            width:1000px;
+            height:100%;
+            /*background: url(bg.png);*/
+            margin:0 auto;
+            background: url(img/bg3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .main{
+            width:800px;
+            height: 100%;
+            /*background: #d6ffbd;*/
+            float: left;
+            position: relative;
+            /*background: url(bg.png);*/
+        }
+        .control{
+            width:200px;
+            height:100%;
+            /*background: #c2ffe3;*/
+            float: left;
+            position: relative;
+        }
+        .box{
+            width:60%;
+            margin:10px auto;
+            background: #fff;
+            border-radius: 10px;
+            height:50px;
+            text-align: center;
+            border:1px solid green;
+        }
+        .box>.score,.box>.state{
+            width:80%;
+            height:40px;
+            margin: 0 auto;
+            text-align: center;
+            line-height:40px;
+            border-radius: 5px;
+            /*background: pink;*/
+        }
+        .letter{
+            width:80px;
+            height:80px;
+            position: absolute;
+            color: #000;
+            font-size:30px;
+            font-weight: bold;
+            text-align: center;
+            line-height:80px;
+            background-size: 100% 100%;
+        }
+        .btn,.start{
+            width: 60%;
+            height:40px;
+            margin:10px auto;
+            text-align: center;
+            line-height: 40px;
+            background-color: orange;
+            border-radius: 10px;
+            cursor: pointer;
+            /*box-shadow: 1px 1px 1px #000;*/
+            color: #fff;
+        }
+
+        .start{
+            position: absolute;
+            background-image: url(img/startgame.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            left:-357px;
+            bottom:2px;
+            transition: left 0.3s ease-in-out 0.1s;
+        }
+        .start:hover{
+            left:-350px;
+        }
+        .lifebox{
+            /*background-image: url(img/life.png);*/
+            /*background-repeat: no-repeat;*/
+            /*background-size: cover;*/
+        }
+        .gameover{
+            position: absolute;
+            top:50px;
+            left:0;
+            right: 0;
+            width: 480px;
+            height:460px;
+            background-image:url(img/over.png);
+            background-repeat: no-repeat;
+            margin:auto;
+            font-size:50px;
+            text-align: center;
+            line-height: 260px;
+            font-weight: bold;
+            display: none;
+        }
+        .gameover span:nth-child(1){
+            position: absolute;
+            top: 36px;
+            left:300px;
+            color: #ffbc31;
+        }
+        .gameover span:nth-child(2){
+            position: absolute;
+            top: 86px;
+            left:300px;
+            color: #ffbc31;
+        }
+        .sort{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sence">
+        <div class="main"></div>
+        <div class="control">
+            <div class="box">
+                <div class="name">关卡</div>
+                <div class="state">1</div>
+            </div>
+            <div class="box">
+                <div class="name">得分</div>
+                <div class="score score2">0</div>
+            </div>
+            <div class="box lifebox">
+                <div class="name">生命</div>
+                <div class="score life">5</div>
+            </div>
+            <div class="box sort">
+                <div class="paihang">排行榜
+                    <div class="" style="margin-top: 10px"></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+
+            </div>
+            <div class="start">
+                <!--开始游戏-->
+            </div>
+            <div class="btn">
+               暂停
+            </div>
+        </div>
+        <div class="gameover">
+            <span>0</span>
+            <span>00</span>
+        </div>
+    </div>
+</body>
+<script>
+//    创建字母
+    var main = document.querySelector(".main");
+    var score = document.querySelector(".score2");
+    var btn = document.querySelector(".btn");
+    var startgame = document.querySelector(".start");
+    var state = document.querySelector(".state");
+    var life = document.querySelector(".life");
+    var gameover = document.querySelector(".gameover");
+    var span = document.querySelector(".gameover span:nth-child(1)");
+    var bestele = document.querySelector(".gameover span:nth-child(2)");
+    var paihang = document.querySelectorAll(".paihang div");
+    console.log(paihang)
+//    var num = 3;
+//    var obj = {};
+//    function createLetter() {
+//        var div = document.createElement("div");
+//        do{
+//            var rn = Math.floor(Math.random()*26+65);
+//            var le = String.fromCharCode(rn);
+//        }while(obj[le]);
+////        obj[le] = true;
+//        do{
+//            var rl = Math.random()*720;
+//        }while (check(rl));
+//        var rt = Math.random()*100;
+//        obj[le] = {left:rl,top:rt,el:div};
+//
+//        div.style.left = rl + "px";
+//        div.style.top = rt + "px";
+//        div.innerHTML = le;
+//
+//        main.appendChild(div);
+//    }
+//    function play() {
+//        for(let i = 0;i<num;i++){
+//            createLetter();
+//        }
+//    }
+//    function check(left) {
+//        for(let i in obj){
+//            if(left>obj[i].left-100&&left<obj[i].left+100){
+//                return true;
+//            }
+//        }
+//    }
+//    play();
+//    setInterval(function(){
+//        for(let i in obj){
+//            var t = obj[i].top;
+//            t += 5;
+//            obj[i].top = t;
+//            obj[i].el.style.top = t+"px";
+//        }
+//    },100)
+//    document.onkeydown = function(e){
+//        var keycode = e.keyCode;
+//        var l = String.fromCharCode(keycode);
+//        if(obj[l]){
+//            main.removeChild(obj[l].el);
+//            delete obj[l];
+//            createLetter();
+//        }
+//    }
+    class Game {
+        constructor(main,score,btn,state,life,gameover,span,bestele,paihang) {
+            this.main = main;
+            this.num = 3;
+            this.obj = {};
+            this.score = score;
+            this.stateele = state;
+            this.state = 1;
+            this.speed = 5;
+            this.defen = 0;
+            this.btn = btn;
+            this.pauseFlag = true;
+            this.lifeele = life;
+            this.life = 5;
+            this.height = window.innerHeight;
+            this.startControl = true;
+            this.t = null;
+            this.gameover = gameover;
+            this.span = span;
+            this.bestele = bestele;
+            this.paihang = paihang;
+        }
+
+        start() {
+            for(let i = 0;i<this.num;i++){
+                this._creatLetter();
+            }
+            this._move();
+            this._keydown();
+            this.pause();
+            this.startControl = false;
+            this.bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[];
+            for(let i=0;i<this.bestscor.length;i++){
+                this.paihang[i].innerHTML=`${this.bestscor[i].player}:${this.bestscor[i].scor}`;
+            }
+        }
+//       创建字母
+        _creatLetter() {
+            var div = document.createElement("div");
+            div.className = "letter";
+            do {
+                var rn = Math.floor(Math.random() * 26 + 65);
+                var le = String.fromCharCode(rn);
+            } while (this.obj[le]);
+            do {
+                var rl = Math.random() * 720;
+            } while (this._check(rl));
+            var rt = Math.random() * 100;
+            this.obj[le] = {left: rl, top: rt, el: div};
+            div.style.left = rl + "px";
+            div.style.top = rt + "px";
+//            div.innerHTML = le;
+            div.style.backgroundImage = "url(img/"+le+".png)";
+
+            this.main.appendChild(div);
+        }
+//      检查位置是否重复
+        _check(left) {
+            for (let i in this.obj) {
+                if (left > this.obj[i].left - 100 && left < this.obj[i].left + 100) {
+                    return true;
+                }
+            }
+        }
+//      让字母向下落
+        _move() {
+             this.t = setInterval(function () {
+                for (let i in this.obj) {
+                    var t = this.obj[i].top;
+                    t += this.speed;
+                    this.obj[i].top = t;
+                    this.obj[i].el.style.top = t + "px";
+                    if(t>this.height){
+                        this.life--;
+                        this.lifeele.innerHTML = this.life;
+                        this.main.removeChild(this.obj[i].el);
+                        delete this.obj[i];
+                        this._creatLetter();
+                        if(this.life == 0){
+                            this._gameover();
+                            return;
+                        }
+                    }
+                }
+            }.bind(this), 50)
+
+        }
+//       判断键盘输入字母是否与随机出现的字母相符
+        _keydown() {
+            document.onkeydown = function (e) {
+                var keycode = e.keyCode;
+                var l = String.fromCharCode(keycode);
+                if (this.obj[l]) {
+                    this.defen++;
+                    this.main.removeChild(this.obj[l].el);
+                    delete this.obj[l];
+                    this._creatLetter();
+                    this.score.innerHTML = this.defen;
+                    if(this.defen%10 == 0){
+                        this._upstate();
+                    }
+                }
+            }.bind(this)
+        }
+//     暂停
+        pause(){
+            this.btn.onclick = function () {
+                if(this.pauseFlag){
+                    this.pauseFlag = false;
+                    clearInterval(this.t);
+                    document.onkeydown = null;
+                    this.btn.innerHTML="继续";
+                    this.btn.style.backgroundColor = "green";
+                }else{
+                    this.pauseFlag = true;
+                    this._move();
+                    this._keydown();
+                    this.btn.innerHTML="暂停";
+                    this.btn.style.backgroundColor = "orange";
+                }
+            }.bind(this)
+
+        }
+        _upstate(){
+            this.state++;
+            this.stateele.innerHTML = this.state;
+            if(this.state<=2){
+                this._creatLetter();
+            }else{
+                this.speed++;
+            }
+        }
+        _gameover(){
+
+            this.gameover.style.display = "block";
+            if (this.bestscor.length < 3 || (this.bestscor.length >= 3 && this.defen > this.bestscor[2].scor)) {
+                var player = prompt("请输入姓名");
+                this.bestscor.push({player, scor: this.defen});
+                this.bestscor.sort(function (a, b) {
+                    if (a.scor > b.scor) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+                })
+                if (this.bestscor.length > 3) {
+                    this.bestscor.pop();
+                }
+                localStorage.bestscor = JSON.stringify(this.bestscor);
+            }
+            this.bestele.innerHTML = this.bestscor[0].scor;
+            for(let i=0;i<this.bestscor.length;i++){
+                this.paihang[i].innerHTML=`${this.bestscor[i].player}:${this.bestscor[i].scor}`;
+            }
+            this.span.innerHTML = this.defen;
+            clearInterval(this.t);
+            this.main.innerHTML = "";
+            this.obj={};
+            this.state = 1;
+            this.stateele.innerHTML = 1;
+            this.speed = 5;
+            this.defen = 0;
+            this.score.innerHTML = 0;
+            this.life = 5;
+            this.lifeele.innerHTML = 5;
+            this.startControl = true;
+        }
+    }
+//    实例化
+    var game = new Game(main,score,btn,state,life,gameover,span,bestele,paihang);
+//   点击调用start方法 开始游戏
+
+    startgame.addEventListener("click",function(){
+        if(game.startControl){
+            game.start();
+        }
+    })
+
+</script>
+</html>
