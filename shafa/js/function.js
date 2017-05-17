@@ -27,15 +27,16 @@
 		btn 按钮
 		con 内容
 	*/
-	function xuanxiangka(btn,con){
+	function xuanxiangka(btnbox,conbox){
+		const btn = $(btnbox);
+		const con = $(conbox);
 		for(let i=0;i<btn.length;i++){
 
 			btn[i].onmouseover=function(){
 				for(let j = 0;j<con.length;j++){
-					con[j].style.display="none";
+					con[j].style.display="none";					
 				}
-				con[i].style.display="block";
-				
+				con[i].style.display="block";		
 			}
 
 			btn[i].onmouseout=function(){
@@ -374,7 +375,26 @@
 	 	// },1000);
  	}
  	
-	
+	function moveXXK(btn,con,classname){
+	const lis = $(btn);
+	// console.log(lis);
+	const div = $(con);
+	// console.log(div);
+
+	for(let i=0;i<lis.length;i++){
+
+		lis[i].onclick=function(){
+			// lis[i].ind=i;
+			for(let j = 0;j<div.length;j++){
+				lis[j].classList.remove(classname);
+				div[j].style.display="none";
+
+			}
+			div[i].style.display="block";
+			lis[i].classList.add(classname);
+		}
+	}
+}
 			
 
 	
