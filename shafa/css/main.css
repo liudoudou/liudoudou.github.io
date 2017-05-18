@@ -311,6 +311,16 @@ p {
     width: 495px;
     height: 280px;
 }
+.banner-image-mask .banner-image-screenshots .fade{
+        opacity: 0;
+        z-index: 1;
+        transition:all 1s;
+}
+.banner-image-mask .banner-image-screenshots .fade.active{
+        opacity: 1;
+        z-index: 2;
+    }
+
 section.index-products {
     padding: 20px 20px 5px;
     background-color: #fafafa;
@@ -443,8 +453,14 @@ div.index-section-header>h2 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }*/
+.tab-pane:nth-child(2){
+    display: none;
+}
 div.index-section-header>h2>small>a:not(.pull-right) {
     color: red;
+}
+h2>small:hover a{
+    text-decoration: underline;
 }
 .pull-right {
     float: right!important;

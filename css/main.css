@@ -6,20 +6,25 @@
     font-family: 微软雅黑;
 }
 .section1 .title{
+	position: absolute;
 	height: 50px;
 	font-size: 50px;
 	line-height: 50px;
 	width: 200px;
-	margin-left: 30px;
+	/*margin-left: 30px;*/
 	margin-top:30px;
+	right: 20px;
+	top:20px;
+	float: right;
 }
 .section1 .intro{
-	height: 480px;
-	width: 460px;
-	border: 1px solid #ccc;
+	height: 400px;
+	width: 500px;
+	/*border: 1px solid #ccc;*/
 	border-radius: 20px;
-	margin-left: 200px;
-	margin-top:50px;
+	margin-right: 100px;
+	margin-top:30px;
+	float: right;
 }
 .inhead{
 	height: 100px;
@@ -27,16 +32,18 @@
 }
 .inmain{
 	float: left;
-	height: 400px;
+	height: 300px;
 	width: 300px;
 	margin-left: 40px;
 	margin-top: 50px;
 	font-size: 18px;
+	color: #878787;
+	box-sizing: border-box;
 }
 .section1 .intro .headImg{
 	height:80px;
 	width: 70px;
-	border: 1px solid #ccc;
+	border: 1px solid #a8a8a8;
 	border-radius: 20px;
 	margin-left: 20px;
 	margin-top:20px;
@@ -46,31 +53,33 @@
 	background-position: center center; 
 }
 .introList li{
-	height: 50px;
-	line-height: 50px;
+	height:40px;
+	line-height: 40px;
+	text-align: left;
 }
 .section2 .title{
-	float: right;
+	/*float: right;*/
 	height: 50px;
 	font-size: 50px;
 	line-height: 50px;
 	width: 200px;
-	margin-right: 200px;
-	margin-top:30px;
+	margin-left: 100px;
+	margin-top:50px;
 }
 .skillShow{
 	width: 500px;
 	height: 500px;
-	float: right;
-	margin-top: 150px;
-	margin-right: -100px;
+	/*float: right;*/
+	margin-top: 90px;
+	margin-left: -120%;
 	padding-left: 70px;
 	box-sizing:border-box;
+	/*position: absolute;*/
 }
 .skillList li{
 	width:120px;
 	height: 120px;
-	float: left;
+	float: right;
 	margin-left: 10px;
 	margin-top: 10px;
 }
@@ -79,27 +88,45 @@
 	font-size: 50px;
 	line-height: 50px;
 	width: 200px;
-	margin-left: 50px;
+	margin-left: 500px;
 	margin-top:30px;
 }
 .job{
 	padding-top: 10px;
-	width:980px;
+	width:600px;
 	height: 650px;
 	margin-top: 10px;
-	margin-left: 150px;
+	margin-right: -120%;
+	float: right;
 	/*background-color: #fff;*/
 	box-sizing:border-box;
 }
+.work{
+	width: 100%;
+	height: 250px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.work span.til{
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	font-size: 30px;
+	float: right;
+	position: absolute;
+	right: -10px;
+	top: -30px;
+}
 
-.jobList li{
+.jobList .work li{
 	height: 30px;
 	width: 120px;
 	border-radius: 10px;
 	border:1px solid #000;
 	font-size: 18px;
-	margin-left: 20px;
-	margin-top: 20px;
+	margin-right: 20px;
+	margin-top: 40px;
 	float: left;
 	line-height: 30px;
 	text-align: center;
@@ -109,21 +136,4 @@
 }
 .jobList li a:hover{
 	text-decoration: underline;
-}
-.jobList li:first-child{
-	float: none;
-	font-size: 20px;
-	font-weight: bold;
-}
-.jobList li:nth-child(9){
-	float: none;
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: 120px;
-}
-.jobList li:nth-child(19){
-	float: none;
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: 120px;
 }

@@ -49,8 +49,49 @@
 
 		}
 	}
-	// xuanxiangka(lis,div)
+	function xuanxiangka2(btnbox,conbox,classname){
+		const btn = $(btnbox);
+		const con = $(conbox);
+		for(let i=0;i<btn.length;i++){
 
+			btn[i].onmouseover=function(){
+				for(let j = 0;j<con.length;j++){
+					con[j].classList.remove(classname);					
+				}
+				con[i].classList.add(classname);	
+			}
+
+			// btn[i].onmouseout=function(){
+			// 	for(let j = 0;j<con.length;j++){
+			// 		con[j].classList.remove(classname);
+			// 	}
+				
+				
+			// }
+
+		}
+	}
+	// xuanxiangka(lis,div)
+	function moveXXK(btn,con,classname){
+	const lis = $(btn);
+	// console.log(lis);
+	const div = $(con);
+	// console.log(div);
+
+	for(let i=0;i<lis.length;i++){
+
+		lis[i].onclick=function(){
+			// lis[i].ind=i;
+			for(let j = 0;j<div.length;j++){
+				lis[j].classList.remove(classname);
+				div[j].style.display="none";
+
+			}
+			div[i].style.display="block";
+			lis[i].classList.add(classname);
+		}
+	}
+}
 	/* 遮罩
 		zhezhao(btn,con)
 		btn 按钮
@@ -375,26 +416,75 @@
 	 	// },1000);
  	}
  	
-	function moveXXK(btn,con,classname){
-	const lis = $(btn);
-	// console.log(lis);
-	const div = $(con);
-	// console.log(div);
+	
 
-	for(let i=0;i<lis.length;i++){
 
-		lis[i].onclick=function(){
-			// lis[i].ind=i;
-			for(let j = 0;j<div.length;j++){
-				lis[j].classList.remove(classname);
-				div[j].style.display="none";
+function bannerOpacity(img,btn,win,left,right){
+        var imgs = document.querySelectorAll(img);
+        // var btns = document.querySelectorAll(btn);
+        // var box = document.querySelector(win);
+        // var prev = document.querySelector(left);
+        // var next = document.querySelector(right);
+        // var nowbtn = btns[0];
+        var num = 0;
+        var st;
+        var nowimg = imgs[num];
+        var flag = true;
+        Array.from(imgs).forEach(function (img,index) {
+            btn.onmouseover = function () {
+                clearTimeout(st);
+                st = setTimeout(function () {
+                    num = index;
+                    this.classList.add("active");
+                    // nowbtn.classList.remove("active");
+                    // nowbtn = this;
+                    imgs[index].classList.add("active");
+                    nowimg.classList.remove("active");
+                    nowimg = imgs[index];
+                }.bind(this),200);
 
-			}
-			div[i].style.display="block";
-			lis[i].classList.add(classname);
-		}
-	}
-}
-			
+            }
+        });
+        var t = setInterval(move,1000);
+        function move() {
+            num++;
+            if(num == imgs.length){
+                num = 0;
+            }
+            if(num == -1){
+                num = imgs.length - 1;
+            }
+            // btns[num].classList.add("active");
+            // nowbtn.classList.remove("active");
+            // nowbtn = btns[num];
+            imgs[num].classList.add("active");
+            nowimg.classList.remove("active");
+            nowimg = imgs[num];
+        }
+        // box.onmouseover=function () {
+        //     clearInterval(t);
+        // }
+        // box.onmouseout=function () {
+        //     t = setInterval(move,1000);
+        // }
+        // prev.onclick = function () {
+        //     if(flag){
+        //         num -=2;
+        //         flag = false;
+        //         move();
+        //     }
+        // }
+        // next.onclick = function () {
+        //     if(flag){
+        //         flag = false;
+        //         move();
+        //     }
+        // }
+        Array.from(imgs).forEach(function (img) {
+            img.addEventListener("transitionend",function () {
+                flag = true;
+            })
+        })
+    }			
 
 	
