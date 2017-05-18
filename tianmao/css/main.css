@@ -1,3 +1,11 @@
+@font-face {
+      font-family: 'iconfont';  /* project id 241102 */
+      src: url('font//at.alicdn.com/t/font_7poe7p7caoqadcxr.eot');
+      src: url('font//at.alicdn.com/t/font_7poe7p7caoqadcxr.eot?#iefix') format('embedded-opentype'),
+      url('font//at.alicdn.com/t/font_7poe7p7caoqadcxr.woff') format('woff'),
+      url('font//at.alicdn.com/t/font_7poe7p7caoqadcxr.ttf') format('truetype'),
+      url('font//at.alicdn.com/t/font_7poe7p7caoqadcxr.svg#iconfont') format('svg');
+}
 input[type=text]:focus{
     outline: none;
 }
@@ -755,6 +763,7 @@ header{
     box-sizing:border-box;
 }
 .refresh-btn .rotate-icon {
+    display: block;
     width: 40px;
     height: 40px;
     position: absolute;
@@ -782,7 +791,7 @@ header{
     width: 121px;
     height: 108px;
 }*/
-.refresh-btn:hover{
+.refresh-btn:hover .rotate-icon{
     animation: rotate .5s ease-out 0s;
     transform: rotate(360deg);
 }
