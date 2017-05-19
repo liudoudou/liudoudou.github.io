@@ -115,7 +115,7 @@
 			}
 			gettime(){
 				let now= new Date();
-				let chatime=this.date.getTime()-now.getTime();
+				let chatime=Math.abs(this.date.getTime()-now.getTime());
 				chatime/=1000;
 				// let t=parseInt(chatime/60/60/24);
 				let h=parseInt(chatime/60/60%24);
@@ -123,9 +123,9 @@
 				let s=parseInt(chatime%60);
 				let map =new Map();
 
-				h=h<10?('0'+h):h;
-				m=m<10?('0'+m):m;
-				s=s<10?('0'+s):s;
+				h=h<10?(h):h;
+				m=m<10?(m):m;
+				s=s<10?(s):s;
 				
 				map.set("h",h);
 				map.set("m",m);
