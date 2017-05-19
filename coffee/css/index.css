@@ -1,0 +1,427 @@
+.inwidth{
+	width: 1200px;
+	margin:0 auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+.navbar a{
+	color: #fff;
+}
+
+.navbar a.active{
+	color: #000;
+}
+/*导航*/
+.nav{
+	height: 110px;
+	background-color: #d7c498;
+	line-height: 110px;
+	font-size: 20px;
+}
+.nav-left{
+	width: 410px;
+	height: 110px;
+	padding-left: 40px;
+	box-sizing:border-box;
+}
+.menu-item{	
+	margin-right: 40px;
+}
+.nav-logo{
+	width: 350px;
+	height: 110px;
+	/*padding-left: 80px;*/
+	box-sizing:border-box;
+}
+.nav-logo a{
+	display: block;
+	width: 85px;
+	height: 85px;
+	margin: 0 auto;
+}
+.nav-logo .logo-img img{
+	width: 85px;
+	height: 85px;
+}
+.nav-right{
+	width: 440px;
+	height: 110px;
+	padding-left: 50px;
+	box-sizing:border-box;
+}
+/*banner*/
+.banner{
+	position: relative;
+	height: 750px;
+	background-image: url(../images/banner.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.tm{
+	position: absolute;
+	width: 659px;
+	height: 200px;
+	background-color: rgba(71,32,32,0.5);
+	left: 0;
+	bottom: 20px;
+}
+.tm-smallbox{
+	margin-left: 238px;
+	margin-top: 40px;
+	width: 290px;
+	height: 90px;
+}
+.tm-hd-l{
+	display: block;
+	/*position: absolute;*/
+	/*margin-left: 238px;*/
+	margin-top: 10px;
+	font-size: 18px;
+	color: #fff;
+	float: left;
+}
+.tm img{
+	width: 20px;
+	height: 36px;
+	float: left;
+	margin-left: 10px;
+}
+.tm-hd-r{
+	font-size: 18px;
+	color: #fff;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.clear{
+	clear: both;
+}
+.tm-desc{
+	font-size: 12px;
+	color: #fff;
+}
+/*产品中心*/
+.product{
+	height: 528px;
+}
+.pro-title{
+	height: 45px;
+	font-size: 20px;
+	color: #5c2f0e;
+	text-align: center;
+	line-height: 45px;
+	font-weight: bold;
+	margin-top: 100px;
+}
+.pro-line{
+	height: 2px;
+	width: 127px;	
+	margin: 0 auto;
+	margin-top: 24px;
+	background-color: #b5a8a8;
+}
+.pro-desc{
+	color: #293036;
+	line-height: 80px;
+	font-size: 12px;
+	text-align: center;
+}
+.pro-carousel .pro-img{
+	width: 285px;
+	height: 285px;
+	float: left;
+	position: relative;
+	margin-left: 15px;
+}
+.pro-carousel .pro-img img{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	margin: auto;
+}
+
+.aboutus{
+	position: relative;
+	height: 568px;
+	background-image: url(../images/bg1.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover; 
+	color: #fff;
+}
+.aboutus-zhe{
+	width: 100%;
+	height: 568px;
+	position: absolute;
+	top:0;
+	left: 0;
+	background-color: rgba(12,11,17,0.7);
+}
+
+.s-con{
+	width: 588px;
+	height: 374px;
+	margin: 97px auto;
+}
+.about-header{
+	width: 100px;
+	height: 36px;
+	margin:0 auto;
+	margin-bottom: 40px;
+}
+.abou t-body-english{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 25px;
+}
+.about-body-chinese{
+	width: 100%;
+	height: 130px;
+	margin-bottom: 40px;
+}
+.about-header h3,.ourteam-header h3{
+	font-weight: normal;
+	font-size: 24px;
+}
+.about-header p{
+	font-size: 12px;
+	text-align: right;
+}
+.about-body-english p{
+	font-size: 12px;
+	line-height: 20px;
+}
+.about-body-chinese p{
+	font-size: 12px;
+	line-height: 20px;
+}
+.btn-more{
+	width: 95px;
+	height: 24px;
+	border-radius: 12px;
+	border:2px solid #fff;
+	text-align: center;
+	line-height: 21px;
+	font-size: 12px;
+	cursor: pointer;
+	float: right;
+}
+.btn-more:hover{
+	background-color: #fff;
+	color: rgba(12,11,17,0.7);
+}
+.ourteam{
+	height: 650px;
+	margin: 80px auto;
+	font-size: #293036;
+	text-align: center;
+	position: relative;
+}
+.ourteam-header{
+	width: 120px;
+	height: 36px;
+	margin:0 auto;
+	margin-bottom: 40px;
+}
+.ourteam-body{
+	height: 500px;
+}
+.teamList{
+	position: relative;
+	height: 458px;
+}
+.team{
+	position: relative;
+	height: 458px;
+
+}
+.team-item{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	float: left;
+	border-radius: 100%;
+	border: 20px solid #fff;
+	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 50px 0px #D0D0D0; 
+    /*box-sizing:border-box;*/
+
+}
+.picBox{
+	position: relative;
+	height:300px; 
+}
+.first{
+	width: 185px;
+	height: 185px;
+	left: 155px;
+}
+.second{
+	left:297px;
+	width: 222px;
+	height: 222px;
+}
+.middle{	
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 285px;
+	height: 285px;
+	z-index: 3;
+	
+}
+.third{
+	width: 222px;
+	height: 222px;
+	right: 297px;
+}
+.fourth{
+	/*left: 0;
+	right: 0;
+	margin: auto;*/
+	width: 185px;
+	height: 185px;
+	right: 155px;
+}
+.first,.fourth{
+	top:40px;
+	z-index: 1;
+}
+.second,.third{
+	top:20px;
+	z-index: 2;
+}
+.prev,.next{
+	top:100px;
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	color: #322e2e;
+}
+.prev{
+	left:8px;
+}
+.next{
+	right: 8px;
+}
+.name{
+	/*position: absolute;*/
+	/*bottom: 30px;*/
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+.job{
+	/*position: absolute;*/
+	/*bottom: 10px;*/
+	margin-bottom: 10px;
+}
+.pointBox{
+	/*width: 100%;*/
+	width: 1200px;
+	height: 12px;
+	position: absolute;
+	bottom: 50px;
+	margin:auto;
+}
+.pointList{
+	width: 100px;
+	height: 12px;
+	margin: 0 auto;
+}
+.point{
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 8px;
+	background-color: #43312b;
+	border-radius: 100%;
+}
+.pointList li.active{
+	border:1px solid #43312b;
+	background-color: #fff;
+	box-sizing:border-box;
+}
+footer{
+	height: 456px;
+}
+.contact{
+	height: 338px;
+	background-color: #78502d;
+}
+footer .contact .foot-logo{
+	padding-top: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+footer .contact .foot-title{
+	height: 20px;
+	margin-bottom: 20px; 
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+}
+footer .contact .way{
+	height: 65px;
+	margin-bottom: 40px;
+	/*box-sizing:border-box;*/
+}
+.way ul{
+	overflow: hidden;
+	padding-top:26px;
+	padding-bottom: 26px;
+}
+.way ul li{
+	float: left;
+	width: 250px;
+	margin-right: 50px;
+	font-size: 12px;
+	text-align: center;
+	color: #e2d9d2;
+}
+.way ul li:last-child{
+	margin-right: 0;
+}
+.copyright{
+	height: 118px;
+	background-color: #1c0f04;
+	font-size: 12px;
+}
+.copyright .fl,.copyright .fr{
+	margin-top: 50px
+}
+.copyright .fl{
+	width: 50%;
+	text-align: right;
+	color: #e2d9d2
+}
+.copyright .fr{
+	width: 50%;
+	text-align: left;
+	color: #e2d9d2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*banner*/
+.banner{
+	height: 750px;
+}
